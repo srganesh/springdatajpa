@@ -1,0 +1,23 @@
+server:
+  servlet:
+    context-path: /datajpa
+spring:
+  profiles:
+    active: datajpa
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+      naming-strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    platform: postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
